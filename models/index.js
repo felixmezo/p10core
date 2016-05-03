@@ -8,7 +8,7 @@ var Sequelize = require('sequelize');
 //    DATABASE_URL = sqlite:///
 //    DATABASE_STORAGE = quiz.sqlite
 // Usar BBDD Postgres:
-//    DATABASE_URL = postgres://user:passwd@host:port/database
+    DATABASE_URL = "postgres://hcyqsozfgpcltg:WQ6pBdA7aeq880nryX8Ov2UxXe@ec2-54-225-123-119.compute-1.amazonaws.com:5432/dauc7s2vbb9oan"
 
 var url, storage;
 
@@ -36,9 +36,10 @@ sequelize.sync()
         return Quiz.count()
                 .then(function (c) {
                     if (c === 0) {   // la tabla se inicializa solo si está vacía
-                        return Quiz.create({ question: 'Capital de Italia',
-          	                                 answer: 'Roma'
-          	                               })
+                        return Quiz.bulkCreate([ {question: 'Capital de Italia',   answer: 'Roma'},
+                                                 {question: 'Capital de Portugal', answer: 'Lisboa'},
+                                                 {question: 'Capital de Suecia', answer: 'Estocolmo'}
+                                               ])
                                    .then(function() {
                                         console.log('Base de datos inicializada con datos');
                                     });
@@ -49,6 +50,7 @@ sequelize.sync()
         console.log("Error Sincronizando las tablas de la BBDD:", error);
         process.exit(1);
     });
+
 
 
 exports.Quiz = Quiz; // exportar definición de tabla Quiz
