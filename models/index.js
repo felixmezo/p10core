@@ -36,9 +36,10 @@ sequelize.sync()
         return Quiz.count()
                 .then(function (c) {
                     if (c === 0) {   // la tabla se inicializa solo si está vacía
-                        return Quiz.create({ question: 'Capital de Italia',
-          	                                 answer: 'Roma'
-          	                               })
+                        return Quiz.bulkCreate([ {question: 'Capital de Italia',   answer: 'Roma'},
+                                                 {question: 'Capital de Portugal', answer: 'Lisboa'},
+                                                 {question: 'Capital de Suecia', answer: 'Estocolmo'}
+                                               ])
                                    .then(function() {
                                         console.log('Base de datos inicializada con datos');
                                     });
@@ -49,6 +50,7 @@ sequelize.sync()
         console.log("Error Sincronizando las tablas de la BBDD:", error);
         process.exit(1);
     });
+
 
 
 exports.Quiz = Quiz; // exportar definición de tabla Quiz
