@@ -6,3 +6,7 @@ body             { background: #333; }
 
 body             { font-size: xx-large; }
 footer, input    { font-size: large; }
+
+#buscador {
+	width: 90%;
+}

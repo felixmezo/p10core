@@ -30,6 +30,7 @@ exports.index = function(req, res, next) {
       });
   }else{
     models.Quiz.findAll({ where: ["question like ?",'%' + req.query.search + '%']})
+      .then(models.Quiz.findAll({ order: ['question','DESC']}))
       .then(function(quizzes) {
         res.render('quizzes/index.ejs', { quizzes: quizzes});
       })
