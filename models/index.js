@@ -5,20 +5,21 @@ var path = require('path');
 var Sequelize = require('sequelize');
 
 // Usar BBDD SQLite:
-//    DATABASE_URL = sqlite:///
-//    DATABASE_STORAGE = quiz.sqlite
+    DATABASE_URL = "sqlite:///"
+    DATABASE_STORAGE = "quiz.sqlite"
 // Usar BBDD Postgres:
-    DATABASE_URL = "postgres://hcyqsozfgpcltg:WQ6pBdA7aeq880nryX8Ov2UxXe@ec2-54-225-123-119.compute-1.amazonaws.com:5432/dauc7s2vbb9oan"
+ //  DATABASE_URL = "postgres://hcyqsozfgpcltg:WQ6pBdA7aeq880nryX8Ov2UxXe@ec2-54-225-123-119.compute-1.amazonaws.com:5432/dauc7s2vbb9oan"
 
-var url, storage;
+var url = DATABASE_URL;
+var storage = DATABASE_STORAGE || "";
 
-if (!process.env.DATABASE_URL) {
-    url = "sqlite:///";
-    storage = "quiz.sqlite";
-}else{
-    url = process.env.DATABASE_URL;
-    storage = process.env.DATABASE_STORAGE || "";
-}
+// if (!process.env.DATABASE_URL) {
+//     url = "sqlite:///";
+//     storage = "quiz.sqlite";
+// }else{
+//     url = process.env.DATABASE_URL;
+//     storage = process.env.DATABASE_STORAGE || "";
+// }
 var sequelize = new Sequelize(url, 
                               { storage: storage,
                                 omitNull: true 
