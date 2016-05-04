@@ -27,6 +27,10 @@ footer               { text-align: center;}
 
 nav a                { margin: 0px 10px 0px 0px;}
 
+#buscador {
+  width: 40%;
+}
+
 #flashinfo {
   width: 450px;
   border: 2px solid blue;
