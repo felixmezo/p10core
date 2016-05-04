@@ -1,48 +1,107 @@
-* {margin: 0;
-padding: 0;}
 
-body {
-	font: 16px Georgia, Serif;
-	color: white;
+*                    { margin: 0; padding: 0; }
+
+body                 { font: 16px Georgia, serif; 
+                       color: white;
+                     }
+
+.page                 { margin: 2% auto; 
+                        color: white;}
+
+.main                 { border: 1px solid #999; 
+                        padding: 1%;
+                        margin-bottom: 1px;
+                        color: black;
+                        background: #eee;
+                      }
+
+a                    { color: #00B7FF; }
+
+
+section > div        { padding: 20px; }
+
+header               { text-align: center;}
+nav                  { text-align: center;}
+section              { text-align: left;}
+footer               { text-align: center;}
+
+nav a                { margin: 0px 10px 0px 0px;}
+
+#flashinfo {
+  width: 450px;
+  border: 2px solid blue;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  color: #000; 
 }
 
-.page {
-	margin: 2% auto;
-	color: white;
+#flashinfo h3 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #00c;
 }
 
-.main {
-	border: 1px solid #999;
-	padding: 1%;
-	margin-bottom: 1px;
-	color: black;
-	background: #eee;
+#flashinfo ul li {
+    margin: 5px 5px 5px 15px;
+    font-size: 12px;
+    list-style: square; 
 }
 
-a {
-	color: #00B7FF;
+
+#flashsuccess {
+  width: 450px;
+  border: 2px solid green;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  color: #000; 
 }
 
-section > div{
-	padding: 20px;
+#flashsuccess h3 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #0c0;
 }
 
-header {
-	text-align: center;
+#flashsuccess ul li {
+    margin: 5px 5px 5px 15px;
+    font-size: 12px;
+    list-style: square; 
 }
 
-nav {
-	text-align: center;
+#flasherror {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  color: #000; 
 }
 
-section {
-	text-align: left;
+#flasherror h3 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
 }
 
-footer {
-	text-align: center;
-}
-
-nav a{
-	margin: 0px 10px 0px 0px;
+#flasherror ul li {
+    margin: 5px 5px 5px 15px;
+    font-size: 12px;
+    list-style: square;
 }
